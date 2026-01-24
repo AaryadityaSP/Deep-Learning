@@ -36,7 +36,7 @@ class LinearANN_Tanh(nn.Module):
         self.fc2 = nn.Linear(512, 10)
 
     def forward(self, x):
-        x = x.view(x.size(0), -1)   # Flatten
+        x = x.view(x.size(0), -1)   
         x = self.tanh(self.fc1(x))
         return self.fc2(x)
 
