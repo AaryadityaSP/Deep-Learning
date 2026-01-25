@@ -4,14 +4,10 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 
-# --------------------
 # Device
-# --------------------
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# --------------------
 # CIFAR-10 Dataset
-# --------------------
 transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.5, 0.5, 0.5),
@@ -31,17 +27,13 @@ trainloader = torch.utils.data.DataLoader(
     shuffle=True
 )
 
-# --------------------
 # Class Names
-# --------------------
 classes = (
     'airplane', 'automobile', 'bird', 'cat', 'deer',
     'dog', 'frog', 'horse', 'ship', 'truck'
 )
 
-# --------------------
 # Linear Model: f(x) = Wx + b
-# --------------------
 class LinearANN(nn.Module):
     def __init__(self):
         super().__init__()
@@ -53,15 +45,11 @@ class LinearANN(nn.Module):
 
 model = LinearANN().to(device)
 
-# --------------------
 # Loss & Optimizer
-# --------------------
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
-# --------------------
 # Training Loop
-# --------------------
 epochs = 10
 for epoch in range(epochs):
     running_loss = 0.0
@@ -78,8 +66,6 @@ for epoch in range(epochs):
 
     print(f"Epoch [{epoch+1}/{epochs}], Loss: {running_loss:.4f}")
 
-# --------------------
 # Save Model
-# --------------------
 torch.save(model.state_dict(), "linear_cifar10.pth")
 print("Model saved as linear_cifar10.pth")
