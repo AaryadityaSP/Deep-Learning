@@ -47,7 +47,7 @@ model = LinearANN().to(device)
 
 # Loss & Optimizer
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.SGD(model.parameters(), lr=0.01)
+optimizer = optim.SGD(model.parameters(), lr=0.001)
 
 # Training Loop
 epochs = 10
