@@ -47,7 +47,7 @@ transform = transforms.Compose([
 # --------------------
 # Load Image
 # --------------------
-image_path = "test.jpg"  # CHANGE THIS
+image_path = "data.jpg"  # CHANGE THIS
 image = Image.open(image_path).convert("RGB")
 image = transform(image).unsqueeze(0).to(device)
 
