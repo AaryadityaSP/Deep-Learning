@@ -47,7 +47,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.001)
 
 # Training Loop
-epochs = 10
+epochs = 100
 for epoch in range(epochs):
     running_loss = 0.0
     for images, labels in trainloader:
