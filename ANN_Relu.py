@@ -23,7 +23,7 @@ trainset = torchvision.datasets.CIFAR10(
 
 trainloader = torch.utils.data.DataLoader(
     trainset,
-    batch_size=128,
+    batch_size=18,
     shuffle=True
 )
 
