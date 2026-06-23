@@ -49,7 +49,7 @@ optimizer = optim.SGD(model.parameters(), lr=0.001)
 # Training Loop
 epochs = 100
 for epoch in range(epochs):
-    running_loss = 0.0
+    running_loss = 0.00
     for images, labels in trainloader:
         images, labels = images.to(device), labels.to(device)
 
